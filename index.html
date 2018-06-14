@@ -2,24 +2,30 @@
 
 <html>
     <head>
-        <script type = "text/javascript" src = "script.js"></script>
+        <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link type = "text/css" rel = "stylesheet" href = "style.css"/>
         <meta name = "viewport" content = "width = device-width, initial-scale = 0.82"/>
+        <script type = "text/javascript" src = "script.js"></script>
         <title>Rock Paper Scissors</title>
     </head>
 
     <body>
-        <h1 class = "title"> Rock Papers Scissors</h1>
+        <h1 class = "title">Rock Papers Scissors</h1>
 
         <div class = "symbols">
-            <div id = "rock">R</div>
-            <div id = "paper">P</div>
-            <div id = "scissors">S</div>
+            <button id = "rock" type = "button">Rock</button>
+            <button id = "paper" type = "button">Paper</button>
+            <button id = "scissors" type = "button">Scissors</button>
         </div>
 
         <div class = "outcome_display">
-            <div id = "AI_play"></div>
+            <div id = "game_stats">
+                <h5 id = "AI_Choice"></h5>
+                <h5 id = "Your_Choice"></h5>
+            </div>
+            
             <div id = "status"></div>
         </div>
+
     </body>
 </html>

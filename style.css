@@ -1,5 +1,13 @@
-.symbols, outcome_display, title
+.symbols, .title
 {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 200;
+  text-align: center;
+}
+
+.outcome_display
+{
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 200;
+  text-align: left;
 }
