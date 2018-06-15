@@ -90,11 +90,14 @@ $(document).ready(function()
     let player_score = 0;
     let AI_score = 0;
     let finalOutcome = "";
+    $("#AI_score").html(AI_score);
+    $("#Your_score").html(player_score);
 
     $("button").on("click", function()
     {
         if (numOfCurrRound < 6)
         {
+
             $("#round_num").html(numOfCurrRound);
             let computerSelection = computerPlay();
             let playerSelection;
@@ -120,7 +123,6 @@ $(document).ready(function()
             $("#status").html(outcome);
             numOfCurrRound++;
             
-            
             if (outcome.indexOf("You Won!") != -1) 
             {
                 player_score++;
@@ -129,6 +131,9 @@ $(document).ready(function()
             {
                 AI_score++;
             } 
+            
+            $("#AI_score").html(AI_score);
+            $("#Your_score").html(player_score);
             
             if (numOfCurrRound == 6)
             {
@@ -159,7 +164,8 @@ $(document).ready(function()
                     $("#status").html("-");
                     $("#Your_Choice").html("-");
                     $("#round_num").html("-");
-                    
+                    $("#AI_score").html("-");
+                    $("#Your_score").html("-");
                 }, 3000);
             }
         }

@@ -33,8 +33,9 @@ button:hover
 .outcome_display
 {
   text-align: center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
+
 
 #game_stats table, td
 {
@@ -44,17 +45,30 @@ button:hover
   height: 40%;
   font-size: 120%;
   border-radius: 10%;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 200;
 }
 
 
 #status
 {
-  margin-top: 10%;
+  margin-top: 5%;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 200;
-  font-size: 100%;
+  font-size: 150%;
 }
 
-
+#score table, td
+{
+  border: 2px solid black;
+  border-collapse: collapse; 
+  width: 40%;
+  height: 40%;
+  font-size: 120%;
+  border-radius: 10%;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 200;
+  margin-top: 5%;
+}
 
 
