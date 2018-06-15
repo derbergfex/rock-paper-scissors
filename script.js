@@ -93,68 +93,76 @@ $(document).ready(function()
 
     $("button").on("click", function()
     {
-        let computerSelection = computerPlay();
-        let playerSelection;
-        
-        if (this.id = "rock")
+        if (numOfCurrRound < 6)
         {
-            playerSelection = "R"; 
-        } 
-        else if (this.id = "paper")
-        {
-            playerSelection = "P"; 
-        } 
-        else if (this.id = "scissors")
-        {
-            playerSelection = "S"; 
-        } 
+            $("#round_num").html(numOfCurrRound);
+            let computerSelection = computerPlay();
+            let playerSelection;
+            
+            if (this.id === "rock")
+            {
+                console.log("here");
+                playerSelection = "R"; 
+            } 
+            else if (this.id == "paper")
+            { 
+                playerSelection = "P"; 
+            } 
+            else if (this.id == "scissors")
+            {
+                playerSelection = "S"; 
+            } 
 
-        let outcome = roundOutcome(playerSelection, computerSelection);
+            let outcome = roundOutcome(playerSelection, computerSelection);
 
-        $("#AI_Choice").html("Computer's Choice: " + eval(computerSelection));
-        $("#Your_Choice").html("Your Choice: " + eval(playerSelection));
-        $("#status").html(outcome);
-        numOfCurrRound++;
-        
-        
-        if (outcome.indexOf("You Won!") != -1) 
-        {
-            player_score++;
+            $("#AI_Choice").html(eval(computerSelection));
+            $("#Your_Choice").html(eval(playerSelection));
+            $("#status").html(outcome);
+            numOfCurrRound++;
+            
+            
+            if (outcome.indexOf("You Won!") != -1) 
+            {
+                player_score++;
+            }
+            else if (outcome.indexOf("You Lost!") != -1)
+            {
+                AI_score++;
+            } 
+            
+            if (numOfCurrRound == 6)
+            {
+                if (player_score > AI_score)
+                {
+                    finalOutcome = "You are the winner!";
+                }
+                else if (player_score < AI_score)
+                {
+                    finalOutcome = "You are the loser!";
+                }
+                else
+                {
+                    finalOutcome = "It's a draw!";
+                }
+
+                
+                $("#status").html(finalOutcome);
+                
+                setTimeout(function()
+                {
+                    maxNumOfRounds = 5;
+                    numOfCurrRound = 1;
+                    player_score = 0;
+                    AI_score = 0;
+                    finalOutcome = "";
+                    $("#AI_Choice").html("-");
+                    $("#status").html("-");
+                    $("#Your_Choice").html("-");
+                    $("#round_num").html("-");
+                    
+                }, 3000);
+            }
         }
-        else if (outcome.indexOf("You Lost!") != -1)
-        {
-            AI_score++;
-        } 
         
-        if (numOfCurrRound >= 5)
-        {
-            if (player_score > AI_score)
-            {
-                finalOutcome = "You are the winner!";
-            }
-            else if (player_score < AI_score)
-            {
-                finalOutcome = "You are the loser!";
-            }
-            else
-            {
-                finalOutcome = "It's a draw!";
-            }
-
-            $("#AI_Choice").html("-");
-            $("#status").html(finalOutcome);
-
-        setTimeout(function()
-        {
-            $("#AI_Choice").html("");
-            $("#status").html("");
-            $("#Your_Choice").html("");
-            maxNumOfRounds = 5;
-            numOfCurrRound = 1;
-            player_score = 0;
-            AI_score = 0;
-            finalOutcome = "";
-        }, 5000);
-        }
     });
 });

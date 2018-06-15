@@ -3,28 +3,41 @@
 <html>
     <head>
         <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta name = "viewport" content = "width = device-width"/>
         <link type = "text/css" rel = "stylesheet" href = "style.css"/>
-        <meta name = "viewport" content = "width = device-width, initial-scale = 0.82"/>
         <script type = "text/javascript" src = "script.js"></script>
         <title>Rock Paper Scissors</title>
     </head>
 
     <body>
-        <h1 class = "title">Rock Papers Scissors</h1>
 
-        <div class = "symbols">
-            <button id = "rock" type = "button">Rock</button>
-            <button id = "paper" type = "button">Paper</button>
-            <button id = "scissors" type = "button">Scissors</button>
-        </div>
+        <table class = "symbols">
+            <tr>
+                <th><button id = "rock"><img src = "rock.jpg"/></button></th>
+                <th><button id = "paper"/><img src = "paper.jpg"/></button></th>
+                <th><button id = "scissors"/><img src = "scissors.jpg"/></button></th>
+            </tr>
+        </table>
 
         <div class = "outcome_display">
+
             <div id = "game_stats">
-                <h5 id = "AI_Choice"></h5>
-                <h5 id = "Your_Choice"></h5>
+                <table align = "center">
+                    <tr>
+                        <td>Computer</td>
+                        <td>You</td>
+                        <td>Round / 5</td>
+                    </tr>
+                    <tr>
+                        <td id = "AI_Choice">-</td>
+                        <td id = "Your_Choice">-</td>
+                        <td id = "round_num">-</td>
+                    </tr>
+                </table>
             </div>
-            
+
             <div id = "status"></div>
+
         </div>
 
     </body>
